@@ -24,6 +24,16 @@
     --texto-logo: #1F4D3A;
     --texto-nav: #66726D;
     --color-blanco-main:#FFFFFF;
+
+    /* Colores para el dark de catalogo */
+    --cat-fondo-pagina: #FFFFFF;
+    --cat-fondo-portada: var(--color-crema-suave);
+    --cat-fondo-caja: var(--color-blanco);
+    --cat-fondo-chip: #E9F3F4;
+    --cat-borde: var(--color-arena-borde);
+    --cat-titulo: var(--color-verde);
+    --cat-texto: var(--color-gris);
+    --cat-marca: var(--color-turquesa-oscuro);
 }
 
 /* Bloque para el modo oscuro */
@@ -35,13 +45,24 @@ body.dark-mode{
     --texto-logo: var(--dark-color-blanco);
     --texto-nav: var(--dark-color-gris);
     --color-blanco-main:var(--color-celeste);
+
+    /* Catalogo */
+    color-scheme: dark;
+    --cat-fondo-pagina: #16231E;
+    --cat-fondo-portada: #16231E;
+    --cat-fondo-caja: #22302B;
+    --cat-fondo-chip: #1B2A25;
+    --cat-borde: #2f4039;
+    --cat-titulo: #D6F2E6;
+    --cat-texto: var(--color-verde-suave);
+    --cat-marca: var(--color-celeste);
 }
 
 /* HEADER */
 .header {
     width: 100%;
     height: auto;
-    border-bottom: 1px solid var(--borde-blanco-dark);
+    border-bottom: 1px solid var(--cat-borde);
     background-color: var(--color-blanco-dark);
     transition: background-color 0.3s ease, border-color 0.3s ease;
 }
@@ -143,6 +164,15 @@ body.dark-mode{
     background-color: var(--color-blanco-main);
 }   
 
+body{
+    background-color: var(--cat-fondo-pagina);
+    transition: background-color 0.3s ease;
+}
+
+body.dark-mode{
+    background-color: #16231E;
+    color-scheme: dark;
+}
 
 /* FOOTER */
 .footer {
@@ -150,6 +180,7 @@ body.dark-mode{
     color: var(--color-blanco);
     padding: 64px 24px;
     font-family: var(--fuente-principal);
+    border-top: 1px solid var(--cat-borde);
 }
 
 .ftr-cont {

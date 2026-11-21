@@ -6,7 +6,8 @@
     padding-right: 24px;
     padding-bottom: 70px;
     padding-left: 24px;
-    background-color: var(--color-crema-suave);
+    background-color: var(--cat-fondo-portada);
+    border-bottom: 1px solid var(--cat-borde);
 }
 
 .contenedor-portada{
@@ -24,7 +25,7 @@
     font-size: 12px;
     line-height: 18px;
     letter-spacing: 1.92px;
-    color: var(--color-turquesa-oscuro);
+    color: var(--cat-marca);
 }
 
 .contenedor-portada > h1{
@@ -36,7 +37,7 @@
     font-size: 58px;
     line-height: 68.4px;
     letter-spacing: -2.61px;
-    color: var(--color-verde);
+    color: var(--cat-titulo);
 }
 
 .contenedor-portada > p{
@@ -46,7 +47,7 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 27.2px;
-    color: var(--color-gris);
+    color: var(--cat-titulo);
 }
 
 /* SECCIÓN CATÁLOGO */
@@ -67,8 +68,8 @@
     height: 600px;
     padding: 20px;
     border-radius: 17px;
-    background-color: var(--color-blanco);
-    border: 2px solid var(--color-arena-borde);
+    background-color: var(--cat-fondo-caja);
+    border: 2px solid var(--cat-borde);
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -88,7 +89,7 @@
     font-weight: 400;
     font-size: 17px;
     line-height: 20.1px;
-    color: var(--color-verde);
+    color: var(--cat-titulo);
 }
 
 .encabezado-filtros > button{
@@ -109,7 +110,7 @@
     flex-direction: column;
     gap: 12px;
     padding: 17px 0;
-    border-bottom: 1px solid var(--color-arena-borde);
+    border-bottom: 1px solid var(--cat-borde);
 }
 
 .titulo-filtro{
@@ -118,7 +119,7 @@
     font-weight: 700;
     font-size: 12px;
     line-height: 18px;
-    color: var(--color-verde);
+    color: var(--cat-titulo);
 }
 
 input[type="search"]{
@@ -126,8 +127,8 @@ input[type="search"]{
     height: 40px;
     padding: 0 10px;
     border-radius: 8px;
-    background-color: var(--color-blanco);
-    border: 2px solid var(--color-arena-borde);
+    background-color: var(--cat-fondo-caja);
+    border: 2px solid var(--cat-borde);
     font-family: var(--fuente-principal);
     font-size: 12px;
     color: var(--color-gris);
@@ -135,7 +136,7 @@ input[type="search"]{
 }
 
 input[type="search"]::placeholder{
-    color: var(--color-gris);
+    color: var(--cat-texto);
 }
 
 input[type="search"]:focus{
@@ -157,13 +158,13 @@ input[type="search"]:focus{
     font-weight: 400;
     font-size: 12px;
     line-height: 18px;
-    color: var(--color-gris);
+    color: var(--cat-texto);
     cursor: pointer;
 }
 
 .opciones-filtro > label:has(input[type="radio"]:checked){
     font-weight: 700;
-    color: var(--color-turquesa-oscuro);
+    color: var(--cat-marca);
 }
 
 input[type="radio"]{
@@ -178,11 +179,11 @@ input[type="radio"]{
     height: 40px;
     padding: 0 10px;
     border-radius: 8px;
-    background-color: var(--color-blanco);
-    border: 2px solid var(--color-arena-borde);
+    background-color: var(--cat-fondo-caja);
+    border: 2px solid var(--cat-borde);
     font-family: var(--fuente-principal);
     font-size: 12px;
-    color: var(--color-gris);
+    color: var(--cat-texto);
     cursor: pointer;
 }
 
@@ -206,7 +207,7 @@ input[type="radio"]{
     font-weight: 700;
     font-size: 12px;
     line-height: 18px;
-    color: var(--color-gris);
+    color: var(--cat-texto);
 }
 
 .fila-precio-titulo > b {
@@ -214,7 +215,7 @@ input[type="radio"]{
     font-weight: 700;
     font-size: 12px;
     line-height: 18px;
-    color: var(--color-verde);
+    color: var(--cat-titulo);
 }
 
 input[type="range"] {
@@ -234,7 +235,7 @@ input[type="range"] {
     width: auto;
     font-weight: 400;
     font-size: 12px;
-    color: var(--color-gris);
+    color: var(--cat-texto);
 }
 
 .zona-resultados {
@@ -259,7 +260,7 @@ input[type="range"] {
     font-weight: 400;
     font-size: 13px;
     line-height: 19.5px;
-    color: var(--color-gris);
+    color: var(--cat-texto);
 }
 
 .barra-resultados > select {
@@ -267,11 +268,11 @@ input[type="range"] {
     min-height: 40px;
     padding-left: 10px;
     border-radius: 9px;
-    background-color: var(--color-blanco);
-    border: 2px solid var(--color-arena-borde);
+    background-color: var(--cat-fondo-caja);
+    border: 2px solid var(--cat-borde);
     font-family: var(--fuente-principal);
     font-size: 13px;
-    color: var(--color-verde);
+    color: var(--cat-titulo);
 }
 
 .grilla-viajes {
@@ -285,8 +286,8 @@ input[type="range"] {
 .tarjeta{
     height: auto;
     border-radius: 17px;
-    background-color: var(--color-blanco);
-    border: 1px solid var(--color-arena-borde);
+    background-color: var(--cat-fondo-caja);
+    border: 1px solid var(--cat-borde);
     transition: transform 0.2s ease;    
 }
 
@@ -342,7 +343,7 @@ input[type="range"] {
     font-family: var(--fuente-principal);
     font-weight: 800;
     font-size: 11px;
-    color: var(--color-turquesa-oscuro);
+    color: var(--cat-marca);
 }
 
 .contenido > h3{
@@ -353,7 +354,7 @@ input[type="range"] {
     font-family: var(--fuente-titulos);
     font-weight: 400;
     font-size: 17px;
-    color: var(--color-verde);
+    color: var(--cat-titulo);
 }
 
 .contenido > small{
@@ -365,7 +366,7 @@ input[type="range"] {
     font-family: var(--fuente-principal);
     font-weight: 400;
     font-size: 11px;
-    color: var(--color-gris);
+    color: var(--cat-texto);
 }
 
 .contenido > small > svg{
@@ -395,8 +396,8 @@ input[type="range"] {
     width: 100%;
     height: 49px;
     padding: 10px 0;
-    border-top: 1px solid var(--color-arena-borde);
-    border-bottom: 1px solid var(--color-arena-borde);
+    border-top: 1px solid var(--cat-borde);
+    border-bottom: 1px solid var(--cat-borde);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -413,7 +414,7 @@ input[type="range"] {
     padding: 5px;
     border-radius: 8px;
     background-color: #E9F3F4;
-    color: var(--color-turquesa-oscuro);
+    color: var(--color-gris);
 }
 
 .incluye > small{
@@ -422,7 +423,7 @@ input[type="range"] {
     font-family: var(--fuente-principal);
     font-weight: 400;
     font-size: 9px;
-    color: var(--color-gris);
+    color: var(--cat-texto);
 }
 
 .detalle{
@@ -439,7 +440,7 @@ input[type="range"] {
     font-family: var(--fuente-principal);
     font-weight: 400;
     font-size: 9px;
-    color: var(--color-gris);
+    color: var(--cat-texto);
 }
 
 .detalle > span > b{
@@ -448,7 +449,7 @@ input[type="range"] {
     font-family: var(--fuente-titulos);
     font-weight: 700;
     font-size: 22px;
-    color: var(--color-verde);
+    color: var(--cat-titulo);
 }
 
 .detalle > button{
@@ -469,3 +470,4 @@ input[type="range"] {
 .detalle>button:hover{
     background-color: #fc5635;
 }
+
