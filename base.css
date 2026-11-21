@@ -1,0 +1,206 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --color-naranja: #FF6B4A;
+    --color-verde: #1F4D3A; 
+    --color-celeste: #91E2D9;
+    --color-blanco: #FFFFFF;
+    --color-gris: #66726D;
+    --color-arena-borde: #E5E1DA;
+    --color-turquesa-oscuro: #0E7C86;
+    --color-amarillo-estrella: #E29A19;
+    --color-crema-suave: #F6EFE3;
+    --fuente-titulos: "Poppins", sans-serif;
+    --fuente-principal: "Inter", sans-serif;
+    --color-verde-suave:#A5B8B0;
+    
+    /* colores para el dark */
+    --color-blanco-dark: #FFFFFF;
+    --borde-blanco-dark: #f0f2f1;
+    --texto-logo: #1F4D3A;
+    --texto-nav: #66726D;
+    --color-blanco-main:#FFFFFF;
+}
+
+/* Bloque para el modo oscuro */
+body.dark-mode{
+    --dark-color-blanco: #FFFFFF;
+    --dark-color-gris: #66726D;
+    --color-blanco-dark: #22302B; /* Se usa el mismo nombre de variable, pero se modifica el color para el modo oscuro*/
+    --borde-blanco-dark:#2f4039;
+    --texto-logo: var(--dark-color-blanco);
+    --texto-nav: var(--dark-color-gris);
+    --color-blanco-main:var(--color-celeste);
+}
+
+/* HEADER */
+.header {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid var(--borde-blanco-dark);
+    background-color: var(--color-blanco-dark);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.header-inner { 
+    height: 74px;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-button a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-family: var(--fuente-titulos);
+}
+
+.header-button a svg {
+    background-color: #0E7C86;
+    color: var(--color-blanco);
+    width: 38px;
+    height: 38px;
+    padding: 7px;
+    border-radius: 10px;
+}
+
+.texto-logo {
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--texto-logo);
+}
+
+.texto-logo b {
+    font-weight: 800;
+    color: var(--color-naranja);
+}
+
+/* menú de navegación*/
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    font-family: var(--fuente-principal);
+    font-weight: 600;
+}
+
+.nav a {
+    text-decoration: none;
+    font-size: 13px;
+    color: var(--texto-nav);
+    padding: 8px 2px;
+    position: relative;
+}
+
+.nav a:hover {
+    color: var(--texto-logo);
+}
+
+.nav a.active {
+    color: var(--texto-logo);
+    font-weight: 600;
+}
+
+.nav a.active::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2.5px;
+    background-color: var(--color-naranja);
+    border-radius: 2px;
+}
+
+#btn-luna {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1.5px solid var(--texto-nav);
+    background-color: transparent;
+    color: var(--texto-logo); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+#btn-luna svg {
+    width: 20px;
+    height: 20px;
+}
+
+.main{
+    width: auto;
+    height: 100%;
+    background-color: var(--color-blanco-main);
+}   
+
+
+/* FOOTER */
+.footer {
+    background-color: #123326; 
+    color: var(--color-blanco);
+    padding: 64px 24px;
+    font-family: var(--fuente-principal);
+}
+
+.ftr-cont {
+    width: 880px; 
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 48px;
+}
+
+.ftr-mas {
+    width: 340px;
+}
+
+.footer .texto-logo {
+    color: var(--color-blanco);
+}
+
+.ftr-mas p {
+    margin-top: 16px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--color-verde-suave);
+}
+
+
+.ftr-explora,
+.ftr-ayuda {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.ftr-explora h4,
+.ftr-ayuda h4 {
+    font-family: var(--fuente-titulos);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-blanco);
+    margin-bottom: 4px;
+}
+
+.ftr-explora a,
+.ftr-ayuda a {
+    text-decoration: none;
+    font-size: 14px;
+    color: var(--color-verde-suave);
+}
+
+.ftr-explora a:hover,
+.ftr-ayuda a:hover {
+    color: var(--color-naranja);
+}
