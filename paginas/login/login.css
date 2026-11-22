@@ -1,0 +1,8 @@
+input:focus{
+    outline: none;
+    border-color: #0E7C86 !important;
+}
+
+.btn-ingresar:hover{
+    background-color: #fc5635 !important;
+}

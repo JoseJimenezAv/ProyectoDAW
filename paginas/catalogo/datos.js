@@ -1,0 +1,63 @@
+const viajes = [
+    {
+        id: 1,
+        titulo: "Aventura en el Chimborazo",
+        empresa: "ANDES TREK EC",
+        ubicacion: "Reserva Chimborazo · Sierra",
+        region: "sierra",
+        dias: 3,
+        noches: 2,
+        precio: 329,
+        calificacion: 4.9,
+        resenas: 84,
+        imagen: "https://images.unsplash.com/photo-1641312961118-eda4b3512f43?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+        imagenes: [
+            "https://images.unsplash.com/photo-1641312961118-eda4b3512f43?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+            "https://images.unsplash.com/photo-1651664426321-838ba7c77902?q=80&w=437&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D", 
+            "https://plus.unsplash.com/premium_photo-1724369650335-4755e3a6d090?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D", 
+            "https://images.unsplash.com/photo-1677857387449-723b91ffd0e3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"], 
+        descripcion: "Una expedición inolvidable por los paisajes de altura del Chimborazo, con aclimatación, refugios de montaña y acompañamiento experto. Cada detalle está coordinado para que solo tengas que disfrutar del camino y conectar con el territorio.",
+        actividades: ["Trekking guiado", "Paisajes volcánicos", "Cocina local", "Encuentro comunitario"],
+        puntoEncuentro: {lugar: "Plaza San Francisco, Riobamba", detalle: "Salida a las 07:00 · Presentarse 15 minutos antes"},
+        guia: {nombre: "Mateo Cárdenas", rol: "Guía nacional · Especialista en alta montaña", idiomas: ["Español", "Inglés", "Kichwa"]}
+    },
+    {
+        id: 2,
+        titulo: "Galápagos Isabela",
+        empresa: "ISLAS CONSCIENTES",
+        ubicacion: "Isla Isabela · Galápagos",
+        region: "galapagos",
+        dias: 4,
+        noches: 3,
+        precio: 890,
+        calificacion: 5,
+        resenas: 47,
+        imagen: "https://images.unsplash.com/photo-1676910914056-a8b2b3ad49dd?q=80&w=1073&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+    },
+    {
+        id: 3,
+        titulo: "Ruta del Spondylus",
+        empresa: "COSTA VIVA",
+        ubicacion: "Montañita y Ayampe · Costa",
+        region: "costa",
+        dias: 3,
+        noches: 2,
+        precio: 249,
+        calificacion: 4.7,
+        resenas: 53,
+        imagen: "https://blog.responsibletravelsa.com/wp-content/uploads/2025/08/machalilla2-no-va-_11zon.webp"
+    },
+    {
+        id: 4,
+        titulo: "Baños de Agua Santa",
+        empresa: "BAÑOS EXPLORER",
+        ubicacion: "Baños · Sierra",
+        region: "sierra",
+        dias: 2,
+        noches: 1,
+        precio: 198,
+        calificacion: 4.8,
+        resenas: 96,
+        imagen: "https://images.trvl-media.com/place/500229/b40520fc-f17b-4caf-acc0-32ce62a8634d.jpg"
+    },
+];

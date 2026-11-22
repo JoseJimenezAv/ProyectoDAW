@@ -235,3 +235,13 @@ body.dark-mode{
 .ftr-ayuda a:hover {
     color: var(--color-naranja);
 }
+
+.administracion{
+    text-decoration: none;
+    font-size: 14px;
+    color: var(--color-verde-suave);
+}
+
+.administracion:hover{
+    color: var(--color-naranja);
+}

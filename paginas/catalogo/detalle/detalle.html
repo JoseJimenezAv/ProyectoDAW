@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="../../../globales/base.css">
+    <link rel="stylesheet" href="detalle.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-inner">
+            <div class="header-button">
+                <a href="index.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-compass preview-icon"><circle cx="12" cy="12" r="10"/><path d="m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z"/></svg>
+                    <span class="texto-logo">Viaje<b>EC</b></span>
+                </a>
+            </div>
+ 
+            <nav class="nav">
+                <a href="../../../index.html" class="nav-inicio">Inicio</a> 
+                <a href="../catalogo/catalogo.html" class="nav-catalogo active">Catálogo</a>
+                <a href="#" class="nav-empresas">Empresas</a>
+                <a href="#" class="nav-guias">Guías</a>
+                <a href="#" class="nav-reseñas">Reseñas</a>
+                <a href="#" class="nav-catalogo">Contacto</a>
+                <button id="btn-luna">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon preview-icon"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="pagina">
+        <nav class="migas">
+            <div><a href="../catalogo/catalogo.html">Catálogo</a> / <b id="miga">Viaje</b></div>
+            <a href="../catalogo/catalogo.html">Volver al catálogo</a>
+        </nav>
+
+        <p id="no-encontrado" hidden>Viaje no encontrado. <a href="../catalogo/catalogo.html">Volver al catálogo</a></p>
+
+        <div id="contenido" hidden>
+            <section class="galeria">
+                <img alt="" class="principal" id="foto1">
+                <img alt="" id="foto2">
+                <img alt="" id="foto3">
+                <img alt="" id="foto4">
+            </section>
+
+            <header class="encabezado">
+                <h1 id="titulo"></h1>
+                <p> <span id="ubicacion"></span> · Organiza <b id="empresa"></b></p>
+                <p> <b id="calificacion"></b> <span id="resenas"></span> · <span id="duracion"></span></p>
+            </header>
+
+            <div class="cuerpo">
+                <section class="info">
+                    <h2 id="subtitulo"></h2>
+                    <p id="descripcion"></p>
+
+                    <h3>Actividades principales</h3>
+                    <div class="actividades" id="actividades"></div>
+
+                    <div class="caja">
+                        <small>Punto de encuentro</small>
+                        <b id="lugar"></b>
+                        <small id="detalle-lugar"></small>
+                    </div>
+
+                    <h3>Tu guía para este viaje</h3>
+                    <div class="caja">
+                        <b id="guia-nombre"></b>
+                        <small id="guia-rol"></small>
+                        <div class="idiomas" id="guia-idiomas"></div>
+                        <b class="guia-rating"> <span id="guia-calificacion"></span></b>
+                    </div>
+                </section>
+
+                <aside class="reserva">
+                    <h2>Reserva este viaje</h2>
+                    <p class="desde">Desde <b id="precio"></b> por persona</p>
+
+                    <label for="fecha">Fecha de salida</label>
+                    <input type="date" id="fecha">
+
+                    <div class="fila">
+                        <label>Número de viajeros</label>
+                        <div class="contador">
+                            <button id="menos" type="button">-</button>
+                            <span id="viajeros"></span>
+                            <button id="mas">+</button>
+                        </div>
+                    </div>
+
+                    <div class="total">
+                        <span>Total estimado</span>
+                        <b id="total"></b>
+                    </div>
+
+                    <button class="btn-reservar" id="btn-reservar">Reservar este viaje</button>
+                    <small class="aviso">No se realizará ningún cargo todavía.</small>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer" >
+        <div class="ftr-cont">
+            <div class="ftr-mas">
+                <div class="header-button">
+                        <a href="index.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-compass preview-icon"><circle cx="12" cy="12" r="10"/><path d="m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z"/></svg>
+                            <span class="texto-logo">Viaje<b>EC</b></span>
+                        </a>
+                </div>
+                <p>Conectamos viajeros con experiencias auténticas creadas por emprendimientos ecuatorianos.</p>
+            </div>
+
+            <div class="ftr-explora">
+                <h4>Explora</h4>
+                <a href="../catalogo/catalogo.html">Catálogo</a>
+                <a href="#">Empresas</a>
+                <a href="#">Guías locales</a>
+            </div>
+
+            <div class="ftr-ayuda">
+                <h4>Ayuda</h4>
+                <a href="#">Contacto</a>
+                <a href="#">Preguntas frecuentes</a>
+                <a href="#">Politica de privacidad</a>
+            </div>
+        </div>
+        <a href="#" class="administracion">Administración</a>
+    </footer>
+
+    <script src="../datos.js"></script>
+    <script src="detalle.js"></script>
+    <script src="../../../globales/modoOscuro.js"></script>
+</body>
+</html>
