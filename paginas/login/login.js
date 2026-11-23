@@ -13,7 +13,7 @@ $("#formulario").addEventListener("submit", e => {
 
     if($("#usuario").value === USUARIO && $("#clave").value === CLAVE){
         sessionStorage.setItem("admin", "si");
-        location.href = "admin.html";
+        location.href = "../../CRUD/reservas/reservas.html";
     } else{
         $("#error").textContent = "Usuario o contraseña incorrectos.";
     }

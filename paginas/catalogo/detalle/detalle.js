@@ -61,15 +61,6 @@ $("#mas").addEventListener("click", () =>{
     calcularTotal();
 })
 
-$("#btn-reservar").addEventListener("click", () =>{
-    const fecha = $("#fecha").value;
-    if(!fecha){
-        alert("Elige una fecha de salida.");
-        return;
-    }
-    location.href = `../reserva/reserva.html?id=${viaje.id}&fecha=${fecha}&personas=${viajeros}`;
-});
-
 if(!viaje){
     $("#no-encontrado").hidden = false;
 } else{
