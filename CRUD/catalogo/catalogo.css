@@ -61,6 +61,7 @@ main{
 .contenedor{
     width: 100%;
     height: auto;
+    overflow-y: auto;
 }
 
 .navBar{
@@ -103,6 +104,7 @@ main{
 .encabezado{
     width: auto;
     height: 112px;
+    margin-bottom: 24px;
 }
 
 .encabezado span{
@@ -131,5 +133,173 @@ main{
     font-family: var(--fuente-principal);
     font-weight: 400;
     font-size: 12px;
+    color: var(--color-gris);
+}
+
+/* ==========================================
+   ESTILOS DE LA GRILLA Y FORMULARIO DEL CRUD
+   ========================================== */
+
+.layout{
+    display: grid;
+    grid-template-columns: 380px 1fr; 
+    gap: 20px;
+    align-items: start;
+    margin-top: 24px;
+}
+
+.tarjeta{
+    background-color: var(--color-blanco);
+    border: 1px solid var(--color-arena-borde);
+    border-radius: 18px;
+    padding: 20px;
+    font-family: var(--fuente-principal);
+}
+
+.tarjeta h2{
+    font-family: var(--fuente-titulos);
+    font-size: 18px;
+    color: var(--color-verde);
+}
+
+.subtitulo{
+    font-size: 11px;
+    color: var(--color-gris);
+    margin: 2px 0 18px;
+}
+
+.campo{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 14px;
+}
+
+.campo label{
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.campo input,
+.campo select,
+.campo textarea,
+#buscador{
+    padding: 11px 12px;
+    font-family: var(--fuente-principal);
+    font-size: 13px;
+    background-color: var(--color-crema-suave);
+    border: 1px solid var(--color-arena-borde);
+    border-radius: 10px;
+    outline: none;
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus,
+#buscador:focus{
+    border-color: var(--color-turquesa-oscuro);
+}
+
+.botones{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.botones button{
+    font-family: var(--fuente-principal);
+    font-weight: 700;
+    font-size: 13px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btn-guardar{
+    padding: 11px 22px;
+    background-color: var(--color-naranja);
+    color: var(--color-blanco);
+    border: none;
+}
+
+.btn-limpiar{
+    padding: 10px 18px;
+    background-color: var(--color-blanco);
+    color: var(--color-turquesa-oscuro);
+    border: 1px solid var(--color-turquesa-oscuro);
+}
+
+.btn-cancelar{
+    background-color: transparent;
+    border: none;
+    color: #A63D5F;
+    font-size: 11px !important;
+}
+
+.registros-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.registros-header .subtitulo{
+    margin-bottom: 0;
+}
+
+#buscador{
+    width: 220px;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+}
+
+thead{
+    background-color: #F3EBDD;
+}
+
+th{
+    text-align: left;
+    padding: 12px;
+    font-size: 10px;
+    color: var(--color-gris);
+}
+
+td{
+    padding: 14px 12px;
+    border-bottom: 1px solid var(--color-arena-borde);
+}
+
+.id{
+    font-weight: 700;
+    color: var(--color-turquesa-oscuro);
+}
+
+.miniatura-img{
+    width: 45px;
+    height: 35px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.acciones{
+    display: flex;
+    gap: 6px;
+}
+
+.acciones button{
+    width: 30px;
+    height: 30px;
+    background-color: var(--color-blanco);
+    border: 1px solid var(--color-arena-borde);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.sin-datos{
+    text-align: center;
     color: var(--color-gris);
 }
