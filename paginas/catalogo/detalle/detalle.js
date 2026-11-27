@@ -1,6 +1,14 @@
-// const viajes = JSON.parse(localStorage.getItem("viajes"));
+const viajes = JSON.parse(localStorage.getItem("viajes")) || [];
+const resenas = JSON.parse(localStorage.getItem("resenas")) || [];
+const guias = JSON.parse(localStorage.getItem("guias")) || [];
+const NOMBRES_IDIOMA = { espanol: "Español", ingles: "Inglés", kichwa: "Kichwa" };
 const id = Number(new URLSearchParams(location.search).get("id"));
 const viaje = viajes.find(v => v.id === id);
+
+const resenasDelViaje = resenas.filter(r => r.idViaje === id);
+const promedio = resenasDelViaje.length
+    ? resenasDelViaje.reduce((acc, r) => acc + Number(r.calificacion), 0) / resenasDelViaje.length
+    : null;
 
 const $ = sel => document.querySelector(sel);
 let viajeros = 1
@@ -11,8 +19,8 @@ function pintarViaje(){
     $("#titulo").textContent = viaje.titulo;
     $("#ubicacion").textContent = viaje.ubicacion;
     $("#empresa").textContent = viaje.empresa;
-    $("#calificacion").textContent = viaje.calificacion;
-    $("#resenas").textContent = `${viaje.resenas} reseñas`;
+    $("#calificacion").textContent = promedio != null ? `${promedio.toFixed(1)}` : "Nuevo";
+    $("#resenas").textContent = resenasDelViaje.length ? `${resenasDelViaje.length} reseñas` : "Aún sin reseñas";
     $("#duracion").textContent = `${viaje.dias} días / ${viaje.noches} noches`;
     $("#precio").textContent = `$${viaje.precio}`;
     $("#subtitulo").textContent = viaje.subtitulo || "Sobre este viaje";
@@ -31,7 +39,17 @@ function pintarViaje(){
     $("#lugar").textContent = punto.lugar || "Por confirmar";
     $("#detalle-lugar").textContent = punto.detalle || "";
 
-    const guia = viaje.guia || {};
+    const guiaReg = guias.find(g => g.id === viaje.guiaId);
+    const guia = guiaReg
+    ? {
+        nombre: guiaReg.nombre,
+        rol: guiaReg.especialidad,
+        idiomas: (guiaReg.idiomas || "")
+            .split(", ")
+            .filter(Boolean)
+            .map(i => NOMBRES_IDIOMA[i] || i)
+      }
+    : (viaje.guia || {});
     $("#guia-nombre").textContent = guia.nombre || "Por asignar";
     $("#guia-rol").textContent = guia.rol || "";
     $("#guia-idiomas").innerHTML = (guia.idiomas || []).map(i => `<span>${i}</span>`).join("");
@@ -43,12 +61,18 @@ function calcularTotal(){
     $("#total").textContent = `$${viaje.precio * viajeros}`;
 }
 
+function aFechaLocal(d){
+    const mes = String(d.getMonth() + 1).padStart(2, "0");
+    const dia = String(d.getDate()).padStart(2, "0");
+    return `${d.getFullYear()}-${mes}-${dia}`;
+}
+
 function iniciarFecha() {
     const hoy = new Date();
     const sugerida = new Date();
     sugerida.setDate(hoy.getDate() + 14);
-    $("#fecha").min = hoy.toISOString().split("T")[0];
-    $("#fecha").value = sugerida.toISOString().split("T")[0];
+    $("#fecha").min = aFechaLocal(hoy);
+    $("#fecha").value = aFechaLocal(sugerida)
 }
 
 $("#menos").addEventListener("click", () =>{

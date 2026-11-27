@@ -90,7 +90,6 @@
 .carrusel-seccion {
     width: 100%;
     padding: 60px 80px 80px 80px;
-    background-color: var(--color-blanco-main, #FFFFFF);
 }
 
 .carrusel-header {
@@ -105,7 +104,7 @@
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 1.5px;
-    color: var(--color-verde);
+    color: var(--cat-marca);
     margin-bottom: 8px;
     display: block;
 }
@@ -114,7 +113,7 @@
     font-family: var(--fuente-titulos);
     font-size: 32px;
     font-weight: 700;
-    color: var(--color-verde);
+    color: var(--cat-titulo);
 }
 
 .carrusel-botones {
@@ -128,7 +127,7 @@
     border-radius: 50%;
     border: 1.5px solid var(--color-gris);
     background-color: transparent;
-    color: var(--color-verde);
+    color: var(--cat-titulo);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -264,7 +263,6 @@
 .regiones-seccion {
     width: 100%;
     padding: 60px 80px;
-    background-color: var(--color-blanco-main, #FFFFFF);
 }
 
 .regiones-header {
@@ -277,7 +275,7 @@
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 1.5px;
-    color: var(--color-verde);
+    color: var(--cat-marca);
     margin-bottom: 8px;
     display: block;
 }
@@ -286,7 +284,7 @@
     font-family: var(--fuente-titulos);
     font-size: 32px;
     font-weight: 700;
-    color: var(--color-verde);
+    color: var(--cat-titulo);
 }
 
 .regiones-grid {

@@ -25,6 +25,15 @@ const campoGuiaNombre = document.getElementById("guiaNombre");
 const btnCerrarSesion = document.getElementById("btnCerrarSesion");
 
 let viajes = JSON.parse(localStorage.getItem("viajes")) || [];
+let guias = JSON.parse(localStorage.getItem("guias")) || [];
+
+function cargarGuias(){
+    if(guias.length === 0){
+        campoGuiaNombre.innerHTML = `<option value="">Primero registra un guía</option>`;
+        return;
+    }
+    campoGuiaNombre.innerHTML = `<option value="">Selecciona un guía</option>` + guias.map(g => `<option value="${g.id}">${g.nombre} · ${g.especialidad}</option>`).join("");
+}
 
 function guardarEnStorage(){
     localStorage.setItem("viajes", JSON.stringify(viajes));
@@ -83,13 +92,6 @@ form.addEventListener("submit", function (e){
         .map(act => act.trim())
         .filter(act => act.length > 0);
 
-    const guiaObj = {
-        nombre: campoGuiaNombre.value,
-        rol: "Guía nacional certificado",
-        idiomas: ["Español", "Inglés"],
-        calificacion: 4.9
-    };
-
     const datosViaje = {
         titulo: campoTitulo.value.trim(),
         empresa: campoEmpresa.value,
@@ -107,8 +109,9 @@ form.addEventListener("submit", function (e){
             lugar: campoLugarEncuentro.value.trim(),
             detalle: campoDetalleEncuentro.value.trim()
         },
-        guia: guiaObj
+        guiaId: Number(campoGuiaNombre.value)
     };
+
 
     if(campoId.value){
         const v = viajes.find(item => item.id == campoId.value);
@@ -147,7 +150,7 @@ function editar(id) {
     campoActividades.value = v.actividades.join(", ");
     campoLugarEncuentro.value = v.puntoEncuentro.lugar;
     campoDetalleEncuentro.value = v.puntoEncuentro.detalle;
-    campoGuiaNombre.value = v.guia.nombre;
+    campoGuiaNombre.value = v.guiaId ?? "";
 
     tituloForm.textContent = "Editar viaje";
     subtituloForm.textContent = "Modificando registro " + formatearId(v.id);
@@ -178,3 +181,4 @@ btnCancelar.addEventListener("click", limpiarFormulario);
 buscador.addEventListener("input", mostrarTabla);
 
 mostrarTabla(); 
+cargarGuias();
