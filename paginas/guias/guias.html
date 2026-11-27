@@ -36,7 +36,24 @@
     </header>
 
     <main class="main">
-        <p>main</p>
+        <section class="portada-guia">
+            <div class="contenedor-guia">
+                <span>CONOCIMIENTO QUE TRANSFORMA</span>
+                <h1>Explora con quienes conocen cada sendero</h1>
+                <p>Guías certificados para descubrir historias, naturaleza y cultura con seguridad.</p>
+            </div>
+        </section>
+
+        <section class="guias-seccion">
+            <div class="filtros" id="filtros">
+                <button class="filtro active" data-idioma="todos">Todos</button>
+                <button class="filtro" data-idioma="espanol">Español</button>
+                <button class="filtro" data-idioma="ingles">Inglés</button>
+                <button class="filtro" data-idioma="kichwa">Kichwa</button>
+            </div>
+
+            <div class="grid-guias" id="gridGuias"></div>
+        </section>
     </main>
     
     <footer class="footer" >
@@ -69,5 +86,6 @@
     </footer>
 
     <script src="../../globales/modoOscuro.js"></script>
+    <script src="guias.js"></script>
 </body>
 </html>

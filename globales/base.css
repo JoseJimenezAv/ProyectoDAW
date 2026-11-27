@@ -161,7 +161,6 @@ body.dark-mode{
 .main{
     width: auto;
     height: 100%;
-    background-color: var(--color-blanco-main);
 }   
 
 body{
