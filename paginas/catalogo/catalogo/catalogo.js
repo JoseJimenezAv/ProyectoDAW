@@ -15,6 +15,10 @@ const ICONOS_INCLUYE = `
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-utensils preview-icon"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users preview-icon"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg>`;
 
+let viajes = JSON.parse(localStorage.getItem("viajes")) || [];
+const resenas = JSON.parse(localStorage.getItem("resenas")) || [];
+
+
 function crearTarjeta(v){
     return `
     <article class="tarjeta">
@@ -26,7 +30,7 @@ function crearTarjeta(v){
             <p>${v.empresa}</p>
             <h3>${v.titulo}</h3>
             <small>${ICONO_MAPA}${v.ubicacion}</small>
-            <span>${ICONO_ESTRELLA}${v.calificacion}</span>
+            <span>${ICONO_ESTRELLA}${v.calificacion !== null ? v.calificacion.toFixed(1) : "Nuevo"}</span>
             <div class="incluye">
                 <div>${ICONOS_INCLUYE}</div>
                 <small>Todo incluido</small>
@@ -70,7 +74,7 @@ function aplicarFiltros() {
     );
 
     if (selectOrden.value === "menor-precio") resultado.sort((a, b) => a.precio - b.precio);
-    if (selectOrden.value === "mejor-calificados") resultado.sort((a, b) => b.calificacion - a.calificacion);
+    if (selectOrden.value === "mejor-calificados") resultado.sort((a, b) => (b.calificacion ?? 0) - (a.calificacion ?? 0));
 
     textoPrecio.textContent = `$${precioMax}`;
     pintarViajes(resultado);
@@ -93,4 +97,12 @@ btnLimpiar.addEventListener("click", () => {
     aplicarFiltros();
 });
 
+function calificacionDe(viaje){
+    const delViaje = resenas.filter(r => r.idViaje === viaje.id);
+    if(delViaje.length === 0) return null;
+    const suma = delViaje.reduce((acc, r) => acc + Number(r.calificacion), 0);
+    return suma / delViaje.length;
+}
+
+viajes = viajes.map(v =>({...v, calificacion: calificacionDe(v)}));
 aplicarFiltros();
