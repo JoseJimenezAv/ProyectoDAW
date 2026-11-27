@@ -180,7 +180,6 @@ body.dark-mode{
     color: var(--color-blanco);
     padding: 64px 24px;
     font-family: var(--fuente-principal);
-    border-top: 1px solid var(--cat-borde);
 }
 
 .ftr-cont {

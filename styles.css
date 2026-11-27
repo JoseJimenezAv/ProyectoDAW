@@ -1,0 +1,480 @@
+.hero {
+    position: relative;
+    width: 100%;
+    height: 600px; 
+    display: flex;
+    align-items: center;
+    padding: 0 80px; 
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    object-position: center;
+    z-index: 1;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(16, 40, 32, 0.88) 0%, rgba(16, 40, 32, 0.45) 55%, rgba(16, 40, 32, 0.15) 100%);
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 600px;
+}
+
+.hero-tlo {
+    display: block;
+    font-family: var(--fuente-principal);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: var(--color-celeste);
+    margin-bottom: 16px;
+}
+
+.hero-content h1 {
+    font-family: var(--fuente-titulos);
+    font-size: 54px;
+    font-weight: 700;
+    line-height: 1.12;
+    color: var(--color-blanco);
+    margin-bottom: 20px;
+}
+
+.hero-content h1 em {
+    font-style: normal; 
+    color: var(--color-celeste);
+}
+
+.hero-content p {
+    font-family: var(--fuente-principal);
+    font-size: 15px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.88);
+    margin-bottom: 32px;
+    max-width: 510px;
+}
+
+.btn-explorar {
+    display: inline-block;
+    background-color: var(--color-naranja);
+    color: var(--color-blanco);
+    font-family: var(--fuente-principal);
+    font-size: 15px;
+    font-weight: 600;
+    padding: 15px 32px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-explorar:hover {
+    background-color: #e85a3a;
+    transform: translateY(-2px); 
+}
+
+/* ESTILOS DE LA SECCIÓN CARRUSEL*/
+.carrusel-seccion {
+    width: 100%;
+    padding: 60px 80px 80px 80px;
+    background-color: var(--color-blanco-main, #FFFFFF);
+}
+
+.carrusel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 24px;
+}
+
+.carrusel-sub {
+    font-family: var(--fuente-principal);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: var(--color-verde);
+    margin-bottom: 8px;
+    display: block;
+}
+
+.carrusel-header h2 {
+    font-family: var(--fuente-titulos);
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--color-verde);
+}
+
+.carrusel-botones {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-control {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1.5px solid var(--color-gris);
+    background-color: transparent;
+    color: var(--color-verde);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-control:hover {
+    background-color: var(--color-verde);
+    color: var(--color-blanco);
+    border-color: var(--color-verde);
+}
+
+.carrusel-contenedor {
+    position: relative;
+    width: 100%;
+    height: 440px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.carrusel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none; 
+    align-items: flex-end;
+    padding: 50px;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.carrusel-slide.active {
+    display: flex;
+    opacity: 1;
+    z-index: 2;
+}
+
+.slide-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.carrusel-slide::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(16, 40, 32, 0.1) 20%, rgba(16, 40, 32, 0.85) 90%);
+    z-index: 2;
+}
+
+.slide-contenido {
+    position: relative;
+    z-index: 3;
+    color: var(--color-blanco);
+}
+
+.slide-categoria {
+    font-family: var(--fuente-principal);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    color: var(--color-celeste);
+    margin-bottom: 12px;
+    display: block;
+}
+
+.slide-contenido h3 {
+    font-family: var(--fuente-titulos);
+    font-size: 38px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    line-height: 1.2;
+}
+
+.slide-detalles {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--fuente-principal);
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 20px;
+}
+
+.slide-enlace {
+    font-family: var(--fuente-principal);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-blanco);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.slide-enlace:hover {
+    color: var(--color-celeste);
+    text-decoration: underline;
+}
+
+.carrusel-puntos {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 24px;
+}
+
+.punto {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #D1D8D5;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.punto.activo {
+    width: 24px;
+    border-radius: 4px;
+    background-color: var(--color-naranja);
+}
+/* ESTILOS DE LA SECCIÓN "VIAJA POR REGIÓN"*/
+.regiones-seccion {
+    width: 100%;
+    padding: 60px 80px;
+    background-color: var(--color-blanco-main, #FFFFFF);
+}
+
+.regiones-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.regiones-sub {
+    font-family: var(--fuente-principal);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: var(--color-verde);
+    margin-bottom: 8px;
+    display: block;
+}
+
+.regiones-header h2 {
+    font-family: var(--fuente-titulos);
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--color-verde);
+}
+
+.regiones-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    width: 100%;
+}
+
+.region-card {
+    position: relative;
+    height: 380px;
+    border-radius: 20px;
+    overflow: hidden; 
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    display: flex;
+    align-items: flex-end;
+    cursor: pointer;
+}
+
+.region-card > a {
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}
+
+.region-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    transition: transform 0.5s ease; 
+}
+
+.region-card:hover .region-bg {
+    transform: scale(1.08); 
+}
+
+.region-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(16, 40, 32, 0.1) 30%, rgba(16, 40, 32, 0.85) 90%);
+    z-index: 2;
+    pointer-events: none; 
+}
+
+.region-contenido {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    padding: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    color: var(--color-blanco);
+}
+
+.region-info h3 {
+    font-family: var(--fuente-titulos);
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.region-info p {
+    font-family: var(--fuente-principal);
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.region-flecha {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-blanco);
+    transition: background-color 0.3s ease;
+}
+
+.region-card:hover .region-flecha {
+    background-color: var(--color-naranja);
+}
+
+/* ESTILOS DE LA SECCIÓN "TRES PASOS"*/
+.pasos-seccion {
+    width: 100%;
+    padding: 80px 80px;
+    background-color: var(--color-verde, #102820); 
+    color: var(--color-blanco, #FFFFFF);
+    text-align: center;
+}
+
+.pasos-header {
+    margin-bottom: 60px;
+}
+
+.pasos-sub {
+    font-family: var(--fuente-principal);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: var(--color-naranja); 
+    margin-bottom: 10px;
+    display: block;
+}
+
+.pasos-header h2 {
+    font-family: var(--fuente-titulos);
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--color-blanco);
+}
+
+.pasos-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.pasos-container::before {
+    content: "";
+    position: absolute;
+    top: 35px; 
+    left: 15%;
+    right: 15%;
+    height: 2px;
+    border-top: 2px dashed rgba(255, 255, 255, 0.25);
+    z-index: 1;
+}
+
+.paso-item {
+    position: relative;
+    z-index: 2; 
+    flex: 1;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.paso-circulo {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: var(--color-naranja);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-blanco);
+    margin-bottom: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.paso-numero {
+    font-family: var(--fuente-principal);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--color-naranja);
+    margin-bottom: 8px;
+}
+.paso-item h3 {
+    font-family: var(--fuente-titulos);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--color-blanco);
+    margin-bottom: 12px;
+}
+
+.paso-item p {
+    font-family: var(--fuente-principal);
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 280px;
+}
